@@ -20,11 +20,9 @@ Below are the variables to be updated in ideal_policy.json file:
  
  ## Resources Created:
  
-     `S3 bucket is created by name`: bucket_prefix-account_number-region_name
-     
-     `kms key by name`: bucket_prefix-account_number-region_name
-     
-     `Cloud trail name` : bucket_prefix-account_number-region_name
+     S3 bucket is created by name: bucket_prefix-account_number-region_name
+     kms key by name: bucket_prefix-account_number-region_name
+     Cloud trail name : bucket_prefix-account_number-region_name
  
      
         
