@@ -1,5 +1,5 @@
 # lambda_aws_cloudtrail_automation
-Below is what this code does:
+Code creates a lambda fucntion which in turn:
 1. Create S3 Bucket for cloudtrail.
 2. Create KMS Key
 3. Create Trail
