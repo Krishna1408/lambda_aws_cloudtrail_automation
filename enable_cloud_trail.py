@@ -16,19 +16,15 @@ class Boto3Trails:
         self.account_number = self.policy_file["account_number"]
         self.bucket_policy = json.dumps(self.policy_file["trail_policy"])
         self.kms_policy = json.dumps(self.policy_file['kms_policy'])
-        self.s3_client = boto3.client('s3', aws_access_key_id="AKIAIVOKZMRWBARZGX2A",
-                                      aws_secret_access_key="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",
+        self.s3_client = boto3.client('s3', 
                                       region_name=self.region_name)
-        self.s3_resource = boto3.resource('s3', aws_access_key_id="AKIAIVOKZMRWBARZGX2A",
-                                          aws_secret_access_key="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",
+        self.s3_resource = boto3.resource('s3', 
                                           region_name=self.region_name)
-        self.ctrail_client = boto3.client('cloudtrail', aws_access_key_id="AKIAIVOKZMRWBARZGX2A",
-                                      aws_secret_access_key="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",
+        self.ctrail_client = boto3.client('cloudtrail', 
                                       region_name=self.region_name)
 
         self.kms_policy = json.dumps(self.policy_file['kms_policy'])
-        self.kms_client = boto3.client('kms', aws_access_key_id="AKIAIVOKZMRWBARZGX2A",
-                                  aws_secret_access_key="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",
+        self.kms_client = boto3.client('kms', 
                                   region_name=self.region_name)
 
     @classmethod
