@@ -1,11 +1,7 @@
 {
   "s3_bucket_name": "cloudtrail",
   "region_name" : "eu-central-1",
-  "account_number" : "388376138984",
-  "s3_bucket_log_name" : "store-logs",
-  "region_name_store_s3_logs" : "eu-central-1",
-  "s3_bucket_log_enable_list":["cloudtrail-388376138984-eu-central-1"],
-  "s3_bucket_log_disable_list":[],
+  "account_number" : "Your_Account_ID",
   "kms_policy" : {
   "Version": "2012-10-17",
   "Id": "Key policy created by CloudTrail",
@@ -15,8 +11,8 @@
       "Effect": "Allow",
       "Principal": {
         "AWS": [
-          "arn:aws:iam::388376138984:user/krishnakumar.sharma@sap.com",
-          "arn:aws:iam::388376138984:root"
+          "arn:aws:iam::Your_Account_ID:user/Admin_User_Id",
+          "arn:aws:iam::Your_Account_ID:root"
         ]
       },
       "Action": "kms:*",
@@ -32,7 +28,7 @@
       "Resource": "*",
       "Condition": {
         "StringLike": {
-          "kms:EncryptionContext:aws:cloudtrail:arn": "arn:aws:cloudtrail:*:388376138984:trail/*"
+          "kms:EncryptionContext:aws:cloudtrail:arn": "arn:aws:cloudtrail:*:Your_Account_ID:trail/*"
         }
       }
     },
@@ -58,10 +54,10 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "kms:CallerAccount": "388376138984"
+          "kms:CallerAccount": "Your_Account_ID"
         },
         "StringLike": {
-          "kms:EncryptionContext:aws:cloudtrail:arn": "arn:aws:cloudtrail:*:388376138984:trail/*"
+          "kms:EncryptionContext:aws:cloudtrail:arn": "arn:aws:cloudtrail:*:Your_Account_ID:trail/*"
         }
       }
     },
@@ -76,7 +72,7 @@
       "Condition": {
         "StringEquals": {
           "kms:ViaService": "ec2.eu-central-1.amazonaws.com",
-          "kms:CallerAccount": "388376138984"
+          "kms:CallerAccount": "Your_Account_ID"
         }
       }
     },
@@ -93,10 +89,10 @@
       "Resource": "*",
       "Condition": {
         "StringEquals": {
-          "kms:CallerAccount": "388376138984"
+          "kms:CallerAccount": "Your_Account_ID"
         },
         "StringLike": {
-          "kms:EncryptionContext:aws:cloudtrail:arn": "arn:aws:cloudtrail:*:388376138984:trail/*"
+          "kms:EncryptionContext:aws:cloudtrail:arn": "arn:aws:cloudtrail:*:Your_Account_ID:trail/*"
         }
       }
     }
@@ -112,7 +108,7 @@
                 "Service": "cloudtrail.amazonaws.com"
             },
             "Action": "s3:GetBucketAcl",
-            "Resource": "arn:aws:s3:::cloudtrail-388376138984-eu-central-1"
+            "Resource": "arn:aws:s3:::cloudtrail-Your_Account_ID-eu-central-1"
         },
         {
             "Sid": "AWSCloudTrailWrite20150319",
@@ -121,7 +117,7 @@
                 "Service": "cloudtrail.amazonaws.com"
             },
             "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::cloudtrail-388376138984-eu-central-1/AWSLogs/388376138984/*",
+            "Resource": "arn:aws:s3:::cloudtrail-Your_Account_ID-eu-central-1/AWSLogs/Your_Account_ID/*",
             "Condition": {
                 "StringEquals": {
                     "s3:x-amz-acl": "bucket-owner-full-control"
